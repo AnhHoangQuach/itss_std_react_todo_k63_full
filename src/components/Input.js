@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react'
 
-function Input( { onAdd } ) {
-  const [text, setText] = React.useState('');
+function Input({ onAdd }) {
+  const [text, setText] = React.useState('')
 
-  const handleChange = e => setText(e.target.value);
+  const handleChange = (e) => setText(e.target.value)
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
-      onAdd(text);
-      setText('');
+      onAdd(text)
+      setText('')
     }
-  };
+  }
 
   return (
     <div className="panel-block">
       <input
-        class="input"
+        className="input"
         type="text"
         placeholder="Todoを入力してください"
         value={text}
@@ -23,7 +23,7 @@ function Input( { onAdd } ) {
         onKeyDown={handleKeyDown}
       />
     </div>
-  );
+  )
 }
 
-export default Input;
+export default Input
